@@ -48,7 +48,7 @@ public class Test1_6 {
 		/** 
 		 * find id adherent
 		 */		
-		id=Ui.saisieId("Entrer l'ID de l'adhérent :");
+		id=Ui.saisieId("Entrer l'ID de l'adhÃ©rent :");
 		
 		UtilisateurDAO utilisateurDAO=new UtilisateurDAO();
 		adherent=(Adherent) utilisateurDAO.findByKey(id);
@@ -100,7 +100,7 @@ public class Test1_6 {
 		do {
 			id=Ui.saisieId("Entrer l'ID de l'exemplaire rendu :");
 			if((posEmpruntEnCours=adherent.existEmpruntEnCours(id))==-1) {
-				JOptionPane.showMessageDialog(null, "erreur, exemplaire non trouvé dans la liste empruntée");
+				JOptionPane.showMessageDialog(null, "erreur, exemplaire non trouvÃ© dans la liste empruntÃ©e");
 			}	
 			else {
 				exemplaire=exemplaireDAO.findByKey(id);

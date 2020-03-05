@@ -48,7 +48,7 @@ public class Test1_2 {
 		/** 
 		 * find id adherent
 		 */	
-		id=Ui.saisieId("Entrer l'ID de l'adhérent :");
+		id=Ui.saisieId("Entrer l'ID de l'adhÃ©rent :");
 		
 		UtilisateurDAO utilisateurDAO=new UtilisateurDAO();
 		adherent=(Adherent) utilisateurDAO.findByKey(id);

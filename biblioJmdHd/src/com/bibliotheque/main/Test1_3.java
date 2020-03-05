@@ -48,7 +48,7 @@ public class Test1_3 {
 		/** 
 		 * find id employe
 		 */		
-		id=Ui.saisieId("Entrer l'ID de l'employé :");
+		id=Ui.saisieId("Entrer l'ID de l'employÃ© :");
 		
 		UtilisateurDAO utilisateurDAO=new UtilisateurDAO();
 		employe=(Employe) utilisateurDAO.findByKey(id);		
