@@ -20,6 +20,7 @@ public class Test1_1 {
 
 	public static void main(String[] args) {
 		//test modif git 
+		//test modif server
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");		
 		String strId;
 		Integer id;
@@ -46,7 +47,7 @@ public class Test1_1 {
 		/** 
 		 * find id adherent
 		 */		
-		id=Ui.saisieId("Entrer l'ID de l'adhérent :");
+		id=Ui.saisieId("Entrer l'ID de l'adhÃ©rent :");
 		
 		UtilisateurDAO utilisateurDAO=new UtilisateurDAO();
 		adherent=(Adherent) utilisateurDAO.findByKey(id);
@@ -58,7 +59,7 @@ public class Test1_1 {
 		/** 
 		 * find id employe
 		 */		
-		id=Ui.saisieId("Entrer l'ID de l'employé :");
+		id=Ui.saisieId("Entrer l'ID de l'employÃ© :");
 		
 		employe=(Employe) utilisateurDAO.findByKey(id);		
 		JOptionPane.showMessageDialog(null,employe);		
