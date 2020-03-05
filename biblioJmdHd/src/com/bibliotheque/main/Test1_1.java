@@ -20,7 +20,7 @@ public class Test1_1 {
 
 	public static void main(String[] args) {
 		//test modif git 
-		//test modif server grrrrrrrrrrrrrrrrrrrr
+		//test modif server super j'ai compris
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");		
 		String strId;
 		Integer id;
