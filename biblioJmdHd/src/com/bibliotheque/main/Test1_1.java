@@ -19,7 +19,7 @@ import com.bibliotheque.util.EnumStatusExemplaire;
 public class Test1_1 {
 
 	public static void main(String[] args) {
-		//test modif git
+		//test modif git 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");		
 		String strId;
 		Integer id;
