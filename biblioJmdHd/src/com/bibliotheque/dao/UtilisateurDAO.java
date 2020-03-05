@@ -22,8 +22,8 @@ public class UtilisateurDAO {
 		try {			
 			listeUtilisateur.add( new Adherent("toto", "titi", sdf.parse("06/12/1990"), "H", 1, "toto","toto", "0102030405"));
 			listeUtilisateur.add( new Adherent("Detolle", "JeanMi", sdf.parse("06/12/1960"), "H", 2, "jmd","", "0102030405"));
-			listeUtilisateur.add( new Adherent("Detreille", "Hervé", sdf.parse("06/12/1987"), "H", 3, "dh","", "0102030405"));
-			listeUtilisateur.add( new Employe("Detreille", "Hervé", sdf.parse("06/12/1987"), "H", 4, "dh","", "012345", EnumCategorieEmploye.BIBLIOTHECAIRE));
+			listeUtilisateur.add( new Adherent("Detreille", "HervÃ©", sdf.parse("06/12/1987"), "H", 3, "dh","", "0102030405"));
+			listeUtilisateur.add( new Employe("Detreille", "HervÃ©", sdf.parse("06/12/1987"), "H", 4, "dh","", "012345", EnumCategorieEmploye.BIBLIOTHECAIRE));
 			listeUtilisateur.add( new Employe("Detolle", "JeanMi", sdf.parse("06/12/1960"), "H", 5, "jmd","", "012346", EnumCategorieEmploye.GESTIONNAIRE_DE_FONDS));
 			
 		} catch (ParseException e) {

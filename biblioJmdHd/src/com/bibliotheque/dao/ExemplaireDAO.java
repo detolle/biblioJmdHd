@@ -17,9 +17,9 @@ public class ExemplaireDAO {
 	static {		
 		try {
 			listeExemplaire.add(new Exemplaire(1, sdf.parse("06/12/2018"), EnumStatusExemplaire.DISPONIBLE, "Connard le barbant") );
-			listeExemplaire.add(new Exemplaire(2, sdf.parse("06/12/1991"), EnumStatusExemplaire.DISPONIBLE, "Les Misérables"));
+			listeExemplaire.add(new Exemplaire(2, sdf.parse("06/12/1991"), EnumStatusExemplaire.DISPONIBLE, "Les MisÃ©rables"));
 			listeExemplaire.add(new Exemplaire(3, sdf.parse("06/12/1990"), EnumStatusExemplaire.DISPONIBLE, "Guerre et paix" ));
-			listeExemplaire.add(new Exemplaire(4, sdf.parse("06/12/1985"), EnumStatusExemplaire.DISPONIBLE, "Tintin à Wuhan"));
+			listeExemplaire.add(new Exemplaire(4, sdf.parse("06/12/1985"), EnumStatusExemplaire.DISPONIBLE, "Tintin Ã  Wuhan"));
 			listeExemplaire.add(new Exemplaire(5, sdf.parse("06/12/1984"), EnumStatusExemplaire.DISPONIBLE, "Tintin et le corona"));
 			listeExemplaire.add(new Exemplaire(6, sdf.parse("06/12/2002"), EnumStatusExemplaire.DISPONIBLE,"Luky Luke et les daltons"));
 			listeExemplaire.add(new Exemplaire(7, sdf.parse("06/12/2013"), EnumStatusExemplaire.DISPONIBLE,",klmfmfmfkjfm"));
