@@ -69,6 +69,7 @@ public class EmpruntEnCoursDAO implements IEmpruntEnCoursDAO {
         ps.setInt(2, empruntEnCoursDb.getIdUtilisateur());
         ps.setDate(3, new java.sql.Date(empruntEnCoursDb.getDateEmprunt().getTime()));
         int nb=ps.executeUpdate();
+        ps.close();
         
 		return ((nb > 0) ? true : false);
 	}
@@ -78,6 +79,7 @@ public class EmpruntEnCoursDAO implements IEmpruntEnCoursDAO {
         		.prepareStatement("delete EmpruntEnCours where idExemplaire=?"); 
         ps.setInt(1, id);
         int nb=ps.executeUpdate();
+        ps.close();
         
 		return ((nb > 0) ? true : false);
 	}	

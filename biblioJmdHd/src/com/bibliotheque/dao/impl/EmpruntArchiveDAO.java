@@ -72,6 +72,7 @@ public class EmpruntArchiveDAO implements IEmpruntArchiveDAO {
         ps.setInt(3, empruntArchive.getExemplaire().getIdExemplaire());
         ps.setInt(4, empruntArchive.getUtilisateur().getIdUtilisateur());
         int nb=ps.executeUpdate();
+        ps.close();
         
 		return ((nb > 0) ? true : false);
 	}
@@ -81,6 +82,7 @@ public class EmpruntArchiveDAO implements IEmpruntArchiveDAO {
         		.prepareStatement("delete EmpruntArchive where idempruntarchive=?"); 
         ps.setInt(1, id);
         int nb=ps.executeUpdate();
+        ps.close();
         
 		return ((nb > 0) ? true : false);
 	}	
