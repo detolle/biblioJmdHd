@@ -56,8 +56,11 @@ AND e.IDEXEMPLAIRE =ex.IDEXEMPLAIRE(+)
 |8            |Zuccarelli      |Ange          |101     |angel46     |1987-08-07 00:00:00|H   |ADHERENT            |            |             |                   |            |                   |         |             |
 
 SELECT * FROM  exemplaire
+SELECT * FROM EMPRUNTARCHIVE e 
 
 SELECT * FROM EmpruntEnCours
+insert into empruntencours values (1,1,to_date('20-10-2016' ,'DD-MM-YYYY' ));
+
 DELETE EmpruntEnCours WHERE IDEXEMPLAIRE=2
 UPDATE exemplaire SET STATUS='DISPONIBLE' WHERE IDEXEMPLAIRE=2
 COMMIT 
@@ -70,5 +73,7 @@ select *
 from utilisateur u, adherent a, employe e 
 where u.IDUTILISATEUR=a.IDUTILISATEUR(+) 
 and u.IDUTILISATEUR=e.IDUTILISATEUR(+)
+
+
 
 
