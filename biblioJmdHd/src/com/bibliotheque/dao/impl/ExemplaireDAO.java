@@ -74,10 +74,10 @@ public class ExemplaireDAO implements IExemplaireDAO {
         		.prepareStatement("update exemplaire set status=? where idExemplaire=?"); 
         ps.setString(1, exemplaire.getStatus().toString());
         ps.setInt(2, exemplaire.getIdExemplaire());
-        ResultSet rs=ps.executeQuery();
-		
-		ps.close();
-		return false;
+        int nb=ps.executeUpdate();
+
+        ps.close();        
+		return ((nb > 0) ? true : false);		
 	}
 
 }
