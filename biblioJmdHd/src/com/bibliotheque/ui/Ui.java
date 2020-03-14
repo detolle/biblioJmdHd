@@ -23,4 +23,18 @@ public class Ui {
 		return id;
 	}
 	
+	public static int saisieON(String label) {
+		String strId;
+		int id;
+		Boolean strON;
+		do {
+			id = JOptionPane.showConfirmDialog(null, label);
+//System.out.println("id="+id);
+			break;
+
+		}while(true);
+		
+		return id;		
+	}
+	
 }

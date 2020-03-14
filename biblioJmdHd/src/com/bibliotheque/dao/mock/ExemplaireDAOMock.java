@@ -1,4 +1,4 @@
-package com.bibliotheque.dao;
+package com.bibliotheque.dao.mock;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -9,11 +9,11 @@ import com.bibliotheque.entity.Exemplaire;
 import com.bibliotheque.entity.Livre;
 import com.bibliotheque.util.EnumStatusExemplaire;
 
-public class ExemplaireDAO {
+public class ExemplaireDAOMock {
 	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	private static List<Exemplaire> listeExemplaire = new ArrayList<>();
 	//private static List<Livre> listeLivre = new ArrayList<>();
-	
+
 	static {		
 		try {
 			listeExemplaire.add(new Exemplaire(1, sdf.parse("06/12/2018"), EnumStatusExemplaire.DISPONIBLE, "Connard le barbant") );
@@ -30,7 +30,7 @@ public class ExemplaireDAO {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-	}
+	}	
 	
 	public Exemplaire findByKey(Integer id) {
 		for(Exemplaire e : listeExemplaire) {
@@ -61,12 +61,6 @@ public class ExemplaireDAO {
 		}
 		str+="]";		
 		return str;
-	}
-	
-//	public static void main(String[] args) throws ParseException {
-//		Exemplaire ex1=new Exemplaire();
-//		ex1.setIdExemplaire(1);
-//		ex1.setDateAchat(sdf.parse("06/12/2018"));
-//	}	
+	}	
 	
 }

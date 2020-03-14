@@ -3,6 +3,7 @@
 package com.bibliotheque.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import com.bibliotheque.util.BiblioException;
 import com.bibliotheque.util.EnumCategorieEmploye;
@@ -38,16 +39,30 @@ public class Adherent extends Utilisateur {
 	public static void setDureeMaxPrets(Integer dureeMaxPrets) {
 		Adherent.dureeMaxPrets = dureeMaxPrets;
 	}
-	public Boolean isConditionsPretAcceptees() throws BiblioException {
+	public Boolean isConditionsPretAccepteesMock() throws BiblioException {
 		//test du max
-		if(empruntEnCours.size()>=nbMaxPrets) {
+		if(listeEmpruntEnCours.size()>=nbMaxPrets) {
 			throw new BiblioException("Nombre maximun d'emprunt atteind ("+nbMaxPrets+")");
 		}
-		for(EmpruntEnCours empruntEnCours:empruntEnCours) {
+		for(EmpruntEnCours empruntEnCours: (List<EmpruntEnCours>) listeEmpruntEnCours) {
 			if(isPretEnRetard(empruntEnCours.getDateEmprunt())) {
 				throw new BiblioException("emprunt en retard ("
 						+empruntEnCours.getExemplaire().getIsbn()
-						+" "+sdf.format(empruntEnCours.getDateEmprunt())+")");
+						+"=> "+sdf.format(empruntEnCours.getDateEmprunt())+")");
+			}
+		}
+		return true;
+	}	
+	public Boolean isConditionsPretAcceptees() throws BiblioException {
+		//test du max
+		if(listeEmpruntEnCoursDb.size()>=nbMaxPrets) {
+			throw new BiblioException("Nombre maximun d'emprunt atteind ("+nbMaxPrets+")");
+		}
+		for(EmpruntEnCoursDb empruntEnCours: (List<EmpruntEnCoursDb>) listeEmpruntEnCoursDb) {
+			if(isPretEnRetard(empruntEnCours.getDateEmprunt())) {
+				throw new BiblioException("emprunt en retard ("
+						+empruntEnCours.getExemplaire().getIsbn()
+						+"=> "+sdf.format(empruntEnCours.getDateEmprunt())+")");
 			}
 		}
 		return true;
@@ -63,7 +78,7 @@ public class Adherent extends Utilisateur {
 //	return ((maintenant.getTime() - (dureeMaxPret * 24 * 3600 * 1000)) > dateEmpruntEffective.getTime());
 //}	
 	public Integer getNbRetards() {
-		return empruntEnCours.size();
+		return listeEmpruntEnCours.size();
 	}
 	@Override
 	public String toString() {

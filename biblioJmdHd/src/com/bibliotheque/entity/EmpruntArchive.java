@@ -3,7 +3,7 @@ package com.bibliotheque.entity;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class EmpruntArchive extends Emprunt {
+public class EmpruntArchive {
 	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 	private Date dateEmprunt;
@@ -14,6 +14,7 @@ public class EmpruntArchive extends Emprunt {
 
 	public EmpruntArchive() {
 	}
+
 	public EmpruntArchive(Date dateEmprunt, Date dateRestitutionEff, Utilisateur utilisateur, Exemplaire exemplaire) {
 		super();
 		this.dateEmprunt = dateEmprunt;

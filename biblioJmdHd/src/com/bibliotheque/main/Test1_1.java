@@ -7,11 +7,12 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import com.bibliotheque.dao.ExemplaireDAO;
-import com.bibliotheque.dao.UtilisateurDAO;
+import com.bibliotheque.dao.mock.ExemplaireDAOMock;
+import com.bibliotheque.dao.mock.UtilisateurDAOMock;
 import com.bibliotheque.entity.Adherent;
 import com.bibliotheque.entity.Employe;
 import com.bibliotheque.entity.EmpruntEnCours;
+import com.bibliotheque.entity.EmpruntEnCoursDb;
 import com.bibliotheque.entity.Exemplaire;
 import com.bibliotheque.ui.Ui;
 import com.bibliotheque.util.EnumStatusExemplaire;
@@ -19,10 +20,6 @@ import com.bibliotheque.util.EnumStatusExemplaire;
 public class Test1_1 {
 
 	public static void main(String[] args) {
-		//test modif git 
-		//test modif server super j'ai compris
-		
-		//coucou
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");		
 		String strId;
 		Integer id;
@@ -35,7 +32,7 @@ public class Test1_1 {
 		/** 
 		 * find id exemplaire
 		 */
-		ExemplaireDAO exemplaireDAO=new ExemplaireDAO();
+		ExemplaireDAOMock exemplaireDAO=new ExemplaireDAOMock();
 		for (int i = 0; i < 2; i++) {
 			id=Ui.saisieId("Entrer l'ID de l'exemplaire :");
 			
@@ -51,7 +48,7 @@ public class Test1_1 {
 		 */		
 		id=Ui.saisieId("Entrer l'ID de l'adhérent :");
 		
-		UtilisateurDAO utilisateurDAO=new UtilisateurDAO();
+		UtilisateurDAOMock utilisateurDAO=new UtilisateurDAOMock();
 		adherent=(Adherent) utilisateurDAO.findByKey(id);
 		
 		JOptionPane.showMessageDialog(null,adherent);		

@@ -3,16 +3,21 @@ package com.bibliotheque.entity;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class EmpruntEnCours extends Emprunt {
-	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+public class EmpruntEnCours {
+	protected static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-	private Date dateEmprunt;
+	protected Date dateEmprunt;
 	
-	private Utilisateur utilisateur;
-	private Exemplaire exemplaire;
+	protected Utilisateur utilisateur;
+	protected Exemplaire exemplaire;
 
 	public EmpruntEnCours() {
+		super();
 	}
+	public EmpruntEnCours(Date dateEmprunt) {
+		super();
+		this.dateEmprunt = dateEmprunt;
+	}	
 	public EmpruntEnCours(Date dateEmprunt, Utilisateur utilisateur, Exemplaire exemplaire) {
 		super();
 		this.dateEmprunt = dateEmprunt;
@@ -40,8 +45,8 @@ public class EmpruntEnCours extends Emprunt {
 	}
 	@Override
 	public String toString() {
-		return "EmpruntEnCours [dateEmprunt=" + sdf.format(dateEmprunt) + ", "
-				+ "utilisateur=" + utilisateur + "\n==>"+ exemplaire + "]";
+		return "EmpruntEnCours [dateEmprunt=" + sdf.format(dateEmprunt) 
+				+ " utilisateur=" + utilisateur + " exemplaire="+ exemplaire + "]";
 	}
 
 }

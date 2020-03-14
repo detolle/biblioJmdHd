@@ -8,8 +8,8 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import com.bibliotheque.dao.ExemplaireDAO;
-import com.bibliotheque.dao.UtilisateurDAO;
+import com.bibliotheque.dao.mock.ExemplaireDAOMock;
+import com.bibliotheque.dao.mock.UtilisateurDAOMock;
 import com.bibliotheque.entity.Adherent;
 import com.bibliotheque.entity.Employe;
 import com.bibliotheque.entity.EmpruntArchive;
@@ -34,7 +34,7 @@ public class Test1_6 {
 		/** 
 		 * find id exemplaire
 		 */
-		ExemplaireDAO exemplaireDAO=new ExemplaireDAO();
+		ExemplaireDAOMock exemplaireDAO=new ExemplaireDAOMock();
 		for (int i = 0; i<3; i++) {
 			id=Ui.saisieId("Entrer l'ID de l'exemplaire :");
 
@@ -50,7 +50,7 @@ public class Test1_6 {
 		 */		
 		id=Ui.saisieId("Entrer l'ID de l'adhérent :");
 		
-		UtilisateurDAO utilisateurDAO=new UtilisateurDAO();
+		UtilisateurDAOMock utilisateurDAO=new UtilisateurDAOMock();
 		adherent=(Adherent) utilisateurDAO.findByKey(id);
 		
 		JOptionPane.showMessageDialog(null,adherent);		
@@ -62,7 +62,7 @@ public class Test1_6 {
 		EmpruntEnCours empruntEnCour;
 		for(int i=0;i<3;i++) {
 			try {
-				adherent.isConditionsPretAcceptees(); 
+				adherent.isConditionsPretAccepteesMock(); 
 			}
 			catch (BiblioException be) {
 				JOptionPane.showMessageDialog(null, "Emprunt interdit\n"+be.getMessage());

@@ -7,8 +7,8 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import com.bibliotheque.dao.ExemplaireDAO;
-import com.bibliotheque.dao.UtilisateurDAO;
+import com.bibliotheque.dao.mock.ExemplaireDAOMock;
+import com.bibliotheque.dao.mock.UtilisateurDAOMock;
 import com.bibliotheque.entity.Adherent;
 import com.bibliotheque.entity.Employe;
 import com.bibliotheque.entity.EmpruntEnCours;
@@ -32,7 +32,7 @@ public class Test1_5 {
 		/** 
 		 * find id exemplaire
 		 */
-		ExemplaireDAO exemplaireDAO=new ExemplaireDAO();
+		ExemplaireDAOMock exemplaireDAO=new ExemplaireDAOMock();
 		for (int i = 0; i <= 3; i++) {
 			id=Ui.saisieId("Entrer l'ID de l'exemplaire :");
 		
@@ -48,7 +48,7 @@ public class Test1_5 {
 		 */		
 		id=Ui.saisieId("Entrer l'ID de l'employe :");
 		
-		UtilisateurDAO utilisateurDAO=new UtilisateurDAO();
+		UtilisateurDAOMock utilisateurDAO=new UtilisateurDAOMock();
 		employe=(Employe) utilisateurDAO.findByKey(id);
 		
 		JOptionPane.showMessageDialog(null,employe);		
